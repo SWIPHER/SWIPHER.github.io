@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="Swipher">
   <meta name="keywords" content="">
-  <title>Hexo</title>
+  <title>标签 - Summary ~ Hexo</title>
 
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
@@ -37,7 +37,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -111,10 +111,6 @@
           </div>
 
           
-            <div class="scroll-down-bar">
-              <i class="fas fa-angle-down scroll-down-arrow"></i>
-            </div>
-          
         </div>
       </div>
     </div>
@@ -130,251 +126,20 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-
-  <div class="row mb-4 mx-auto">
+<div class="list-group">
+<!--  <p class="h4">共计 1 篇文章</p>-->
+  <hr>
+  
     
+      
+      <p class="h5">2019</p>
     
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/05/%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%8C%87%E9%92%88%E6%95%B0%E6%8D%AE%E7%9A%84%E7%A8%8B%E5%BA%8F/">
-        <p class="h4 index-header">第一个读取和写入指针数据的程序</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">首先编写一个循环显示变量地址以及数据的程序#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;windows.h&gt;
-int main(int argc, char *argv[]) {
-    SetConsoleTitle(&quot;pointer&quot;); //把窗口标题改为&quot;pointer&quot;
-    int b=100;
-    while(1)
-    {
-        system(&quot;cls&quot;);
-        printf(&quot;%X:%d&quot;,&amp;b,b); //显示变量b的内存地址以及数值
-    }
-}
-运行后会有如下效果:
-​    
-从运行结果可以知道内存地址0X61FE8C所储存的数据是100
-接下来就写一个程序来将0x61FE8C的数据改成107#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;Windows.h&gt;
-int m</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-05&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/%E6%8C%87%E9%92%88">指针</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/05/Windows%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">
-        <p class="h4 index-header">Windows核心编程基础</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">windows常见数据类型
-
-
-数据类型
-解析
-
-
-
-WORD
-16位无符号整形数据
-
-
-DWORD
-32位无符号整型数据(DWORD32)
-
-
-DWORD64
-64位无符号整型数据
-
-
-INT
-32位有符号整型数据类型
-
-
-INT_PTR
-指向INT数据类型的指针类型
-
-
-INT32
-32位符号整型
-
-
-INT64
-64位符号整型
-
-
-UINT
-无符号INT
-
-
-LONG
-32位符号整型(LONG32)
-
-
-ULONG
-无符号LONG
-
-
-LONGLONG
-64位符号整型(LONG64)
-
-
-SHORT
-无符号短整型(16位)
-
-
-LPARAM
-消息的L参数
-
-
-WPARAM
-消息的W参数
-
-
-HANDLE
-对象的句柄,最基本的句柄类型
-
-
-HICON
-图标的句柄
-
-
-HINSTANCE
-程序实例的句柄
-
-
-HKEY
-注册表键的句柄
-
-
-HMODULE
-模块的句柄
-
-
-HWND
-窗口的句柄
-
-
-LPSTR
-字符指针,也就是字符串变量
-
-
-LPCSTR
-字符串常量
-
-
-LPCTSTR
-根据环境配置,如果定义了UNICODE宏,则是LPCWSTR类型,否则则为LPCSTR类型
-
-
-LPC</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-05&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/%E5%9F%BA%E7%A1%80">基础</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/04/Welcome/">
-        <p class="h4 index-header">Welcome!</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">What is this website about?欢迎来到Swipher的个人主页兄弟们还是那句话,只有你们想不到的没有我Swipher做不到的,今天Swipher给大家表演写外挂,干啦!奥里给!
+    <a href="/2019/12/04/Welcome/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">Welcome!</span>
+      <span style="float: right;">12-04</span>
+    </a>
+  
 </div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-04&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/Summary">Summary</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/03/hello-world/">
-        <p class="h4 index-header">Hello World</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
-More info: Writing
-Run server$ hexo server
-More info: Server
-Generate static files$ hexo generate
-More info: Generating
-Deploy to remote sites$ hexo deploy
-More info: Deployment
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-03&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-
 
 
 
@@ -497,7 +262,7 @@ More info: Deployment
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Never Mind the $candal and Liber&nbsp;",
+        "标签 - Summary&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

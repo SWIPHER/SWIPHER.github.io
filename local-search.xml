@@ -4,6 +4,63 @@
   
   
   <entry>
+    <title>第一个读取和写入指针数据的程序</title>
+    <link href="undefined2019/12/05/%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%8C%87%E9%92%88%E6%95%B0%E6%8D%AE%E7%9A%84%E7%A8%8B%E5%BA%8F/"/>
+    <url>2019/12/05/%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%8C%87%E9%92%88%E6%95%B0%E6%8D%AE%E7%9A%84%E7%A8%8B%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<h1 id="首先编写一个循环显示变量地址以及数据的程序"><a href="#首先编写一个循环显示变量地址以及数据的程序" class="headerlink" title="首先编写一个循环显示变量地址以及数据的程序"></a>首先编写一个循环显示变量地址以及数据的程序</h1><pre><code class="C++">#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;windows.h&gt;int main(int argc, char *argv[]) {    SetConsoleTitle(&quot;pointer&quot;); //把窗口标题改为&quot;pointer&quot;    int b=100;    while(1)    {        system(&quot;cls&quot;);        printf(&quot;%X:%d&quot;,&amp;b,b); //显示变量b的内存地址以及数值    }}</code></pre><p>运行后会有如下效果:</p><p>​    <img src="/img/pointer.PNG" srcset="/img/loading.gif" alt=""></p><p>从运行结果可以知道内存地址0X61FE8C所储存的数据是100</p><h1 id="接下来就写一个程序来将0x61FE8C的数据改成107"><a href="#接下来就写一个程序来将0x61FE8C的数据改成107" class="headerlink" title="接下来就写一个程序来将0x61FE8C的数据改成107"></a>接下来就写一个程序来将0x61FE8C的数据改成107</h1><pre><code class="C++">#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;Windows.h&gt;int main(int argc, char *argv[]) {    DWORD address=0x61FE8C;    DWORD pid;    int b=107;    HWND pointer=FindWindow(&quot;ConsoleWindowClass&quot;,&quot;pointer&quot;);    GetWindowThreadProcessId(pointer,&amp;pid);    HANDLE pointer_handle=OpenProcess(PROCESS_ALL_ACCESS,FALSE,pid);    if(WriteProcessMemory(pointer_handle,(LPCVOID)address,&amp;b,4,NULL))    {        printf(&quot;Success!&quot;);    }    else{        printf(&quot;Fuck!&quot;);     }}</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>指针</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Windows核心编程基础</title>
+    <link href="undefined2019/12/05/Windows%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/"/>
+    <url>2019/12/05/Windows%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</url>
+    
+    <content type="html"><![CDATA[<h1 id="windows常见数据类型"><a href="#windows常见数据类型" class="headerlink" title="windows常见数据类型"></a><strong>windows常见数据类型</strong></h1><table><thead><tr><th><strong>数据类型</strong></th><th><strong>解析</strong></th></tr></thead><tbody><tr><td><strong>WORD</strong></td><td><strong>16位无符号整形数据</strong></td></tr><tr><td><strong>DWORD</strong></td><td><strong>32位无符号整型数据(DWORD32)</strong></td></tr><tr><td><strong>DWORD64</strong></td><td><strong>64位无符号整型数据</strong></td></tr><tr><td><strong>INT</strong></td><td><strong>32位有符号整型数据类型</strong></td></tr><tr><td><strong>INT_PTR</strong></td><td><strong>指向INT数据类型的指针类型</strong></td></tr><tr><td><strong>INT32</strong></td><td><strong>32位符号整型</strong></td></tr><tr><td><strong>INT64</strong></td><td><strong>64位符号整型</strong></td></tr><tr><td><strong>UINT</strong></td><td><strong>无符号INT</strong></td></tr><tr><td><strong>LONG</strong></td><td><strong>32位符号整型(LONG32)</strong></td></tr><tr><td><strong>ULONG</strong></td><td><strong>无符号LONG</strong></td></tr><tr><td><strong>LONGLONG</strong></td><td><strong>64位符号整型(LONG64)</strong></td></tr><tr><td><strong>SHORT</strong></td><td><strong>无符号短整型(16位)</strong></td></tr><tr><td><strong>LPARAM</strong></td><td><strong>消息的L参数</strong></td></tr><tr><td><strong>WPARAM</strong></td><td><strong>消息的W参数</strong></td></tr><tr><td><strong>HANDLE</strong></td><td><strong>对象的句柄,最基本的句柄类型</strong></td></tr><tr><td><strong>HICON</strong></td><td><strong>图标的句柄</strong></td></tr><tr><td><strong>HINSTANCE</strong></td><td><strong>程序实例的句柄</strong></td></tr><tr><td><strong>HKEY</strong></td><td><strong>注册表键的句柄</strong></td></tr><tr><td><strong>HMODULE</strong></td><td><strong>模块的句柄</strong></td></tr><tr><td><strong>HWND</strong></td><td><strong>窗口的句柄</strong></td></tr><tr><td><strong>LPSTR</strong></td><td><strong>字符指针,也就是字符串变量</strong></td></tr><tr><td><strong>LPCSTR</strong></td><td><strong>字符串常量</strong></td></tr><tr><td><strong>LPCTSTR</strong></td><td><strong>根据环境配置,如果定义了UNICODE宏,则是LPCWSTR类型,否则则为LPCSTR类型</strong></td></tr><tr><td><strong>LPCWSTR</strong></td><td><strong>UNICODE字符串常量</strong></td></tr><tr><td><strong>LPDWORD</strong></td><td><strong>指向DWORD类型数据的指针</strong></td></tr><tr><td><strong>CHAR</strong></td><td><strong>8比特字节</strong></td></tr><tr><td><strong>TCHAR</strong></td><td><strong>如果定义了UNICODE,则为WCHAR,否则为CHAR</strong></td></tr><tr><td><strong>UCHAR</strong></td><td><strong>无符号CHAR</strong></td></tr><tr><td><strong>WCHAR</strong></td><td><strong>16位Unicode字符</strong></td></tr><tr><td><strong>BOOL</strong></td><td><strong>布尔型变量</strong></td></tr><tr><td><strong>BYTE</strong></td><td><strong>字节类型(8位)</strong></td></tr><tr><td><strong>CONST</strong></td><td><strong>常量</strong></td></tr><tr><td><strong>FLOAT</strong></td><td><strong>浮点数据类型</strong></td></tr><tr><td><strong>SIZE_T</strong></td><td><strong>表示内存大小,以字节为单位,其最大值是CPU最大寻址范围</strong></td></tr><tr><td><strong>VOID</strong></td><td><strong>无类型,相当于标准C语言中的void</strong></td></tr><tr><td><strong>WINAPI</strong></td><td><strong>WindowsAPI的函数调用方式,常见于SDK头文件中对API函数的声明中,相当于_stdcall(更严格地说,这不是数据类型,而是一种函数调用约定</strong></td></tr></tbody></table><h2 id="外挂编写中最基础的api"><a href="#外挂编写中最基础的api" class="headerlink" title="外挂编写中最基础的api"></a><strong>外挂编写中最基础的api</strong></h2><ol><li><p><strong>BOOL ReadProcessMemory( );</strong></p><pre><code class="c++">BOOL ReadProcessMemory(  HANDLE  hProcess,  LPCVOID lpBaseAddress,  LPVOID  lpBuffer,  SIZE_T  nSize,  SIZE_T  *lpNumberOfBytesRead);</code></pre></li></ol><ol start="2"><li><p><strong>BOOL WriteProcessMemory( );</strong></p><pre><code class="C++">BOOL WriteProcessMemory(  HANDLE  hProcess,  LPVOID  lpBaseAddress,  LPCVOID lpBuffer,  SIZE_T  nSize,  SIZE_T  *lpNumberOfBytesWritten);</code></pre></li></ol><ol start="3"><li><p><strong>HMODULE GetModuleHandleA( );</strong></p><pre><code class="c++">HMODULE GetModuleHandleA(  LPCSTR lpModuleName //The name of the loaded module (either a .dll or .exe file). );</code></pre></li></ol><ol start="4"><li><p><strong>FARPROC GetProcAddress(  );</strong></p><pre><code class="c++">FARPROC GetProcAddress(  HMODULE hModule,  LPCSTR  lpProcName);</code></pre></li></ol><ol start="5"><li><p><strong>DWORD GetWindowThreadProcessId(  );</strong></p><pre><code class="C++">DWORD GetWindowThreadProcessId(  HWND    hWnd,  LPDWORD lpdwProcessId);</code></pre></li></ol><ol start="6"><li><p><strong>HANDLE OpenProcess(  );</strong></p><pre><code class="C++">HANDLE OpenProcess(  DWORD dwDesiredAccess,  BOOL  bInheritHandle,  DWORD dwProcessId);</code></pre></li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>基础</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Welcome!</title>
+    <link href="undefined2019/12/04/Welcome/"/>
+    <url>2019/12/04/Welcome/</url>
+    
+    <content type="html"><![CDATA[<h1 id="What-is-this-website-about"><a href="#What-is-this-website-about" class="headerlink" title="What is this website about?"></a>What is this website about?</h1><h1 id="欢迎来到Swipher的个人主页"><a href="#欢迎来到Swipher的个人主页" class="headerlink" title="欢迎来到Swipher的个人主页"></a>欢迎来到Swipher的个人主页</h1><p>兄弟们还是那句话,只有你们想不到的没有我Swipher做不到的,今天Swipher给大家表演写外挂,干啦!奥里给!</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Summary</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="undefined2019/12/03/hello-world/"/>
     <url>2019/12/03/hello-world/</url>
